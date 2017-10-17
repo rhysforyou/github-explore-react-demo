@@ -19,6 +19,18 @@
   --main-accent-fg-color: #97f081;
 }
 
+.Repo--language-Swift {
+  --main-accent-fg-color: #f0b781;
+}
+
+.Repo--language-Elixir {
+  --main-accent-fg-color: #f0b781;
+}
+
+.Repo--language-JavaScript {
+  --main-accent-fg-color: #f0ee78;
+}
+
 .Repo__name {
   color: var(--main-accent-fg-color);
   margin: 0 0 0.5rem;
