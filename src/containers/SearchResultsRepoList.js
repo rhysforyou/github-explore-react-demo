@@ -1,6 +1,6 @@
 import React from 'react'
-import RepoList from './RepoList'
-import debounce from './debounce'
+import RepoList from '../components/RepoList'
+import debounce from '../util/debounce'
 import './SearchResultsRepoList.css'
 
 const STATE_LOADING = 'loading'

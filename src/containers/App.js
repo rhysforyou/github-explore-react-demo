@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SearchBox from './SearchBox'
+import SearchBox from '../components/SearchBox'
 import SearchResultsRepoList from './SearchResultsRepoList'
 import './App.css'
 
