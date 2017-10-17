@@ -1,0 +1,68 @@
+.Repo {
+  background: var(--main-accent-bg-color);
+  color: var(--main-bg-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.Repo a {
+  color: var(--main-accent-fg-color);
+}
+
+.Repo--language-Ruby {
+  --main-accent-fg-color: #ff636e;
+}
+
+.Repo--language-Python {
+  --main-accent-fg-color: #97f081;
+}
+
+.Repo__name {
+  color: var(--main-accent-fg-color);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  padding: 0;
+}
+
+.Repo__language {
+  font-size: 0.875rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.Repo__language,
+.Repo__description {
+  display: block;
+}
+
+.Repo__description {
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.Repo__topics {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.Repo__topics li {
+  display: inline;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.125rem 0.25rem;
+  background: var(--main-accent-fg-color);
+  color: var(--main-accent-bg-color);
+  border-radius: 0.25rem;
+}
