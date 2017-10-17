@@ -1,5 +1,6 @@
 import React from 'react'
 import RepoList from '../components/RepoList'
+import Error from '../components/Error'
 import debounce from '../util/debounce'
 import defaultResults from './defaultResults.json'
 import './SearchResultsRepoList.css'
@@ -28,35 +29,42 @@ class SearchResultsRepoList extends React.Component {
     }
   }
 
-  fetchRepos = debounce(searchTerm => {
-    const url = new URL(
-      `https://api.github.com/search/repositories?q=${encodeURIComponent(
-        searchTerm
-      )}`
-    )
+  fetchRepos = debounce(async searchTerm => {
+    try {
+      const url = new URL(
+        `https://api.github.com/search/repositories?q=${encodeURIComponent(
+          searchTerm
+        )}`
+      )
 
-    fetch(url)
-      .then(res => res.json())
-      .then(json => {
-        if (searchTerm !== this.props.searchTerm) {
-          return
+      const res = await fetch(url)
+      const json = await res.json()
+
+      if (searchTerm !== this.props.searchTerm) {
+        return
+      }
+
+      this.setState((state, props) => {
+        if (this.props.searchTerm === searchTerm) {
+          return {
+            ...state,
+            repos: json.items,
+            loadingState: STATE_LOADED
+          }
+        } else {
+          return state
         }
-
-        this.setState({
-          repos: json.items,
-          loadingState: STATE_LOADED
-        })
       })
-      .catch(error => {
-        if (searchTerm !== this.props.searchTerm) {
-          return
-        }
+    } catch (error) {
+      if (searchTerm !== this.props.searchTerm) {
+        return
+      }
 
-        this.setState({
-          repos: [],
-          loadingState: STATE_ERROR
-        })
+      this.setState({
+        repos: [],
+        loadingState: STATE_ERROR
       })
+    }
   }, 300)
 
   render() {
@@ -65,7 +73,7 @@ class SearchResultsRepoList extends React.Component {
     } else if (this.state.loadingState === STATE_LOADED) {
       return <RepoList repos={this.state.repos} />
     } else if (this.state.loadingState === STATE_ERROR) {
-      return <span>Error loading</span>
+      return <Error message="Error loading repos" />
     } else {
       return <span className="SearchResultsRepoList__spinner" />
     }
