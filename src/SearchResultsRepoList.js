@@ -1,11 +1,12 @@
 import React from 'react'
 import RepoList from './RepoList'
 import debounce from './debounce'
+import './SearchResultsRepoList.css'
 
 const STATE_LOADING = 'loading'
 const STATE_LOADED = 'loaded'
 
-class SearchResultsRepoLst extends React.Component {
+class SearchResultsRepoList extends React.Component {
   static defaultResults = [
     {
       html_url: 'https://github.com/facebook/react',
@@ -86,13 +87,13 @@ class SearchResultsRepoLst extends React.Component {
 
   render() {
     if (this.props.searchTerm == null || this.props.searchTerm.length === 0) {
-      return <RepoList repos={SearchResultsRepoLst.defaultResults} />
+      return <RepoList repos={SearchResultsRepoList.defaultResults} />
     } else if (this.state.loadingState === STATE_LOADED) {
       return <RepoList repos={this.state.repos} />
     } else {
-      return <span>Loading</span>
+      return <span class="SearchResultsRepoList__spinner" />
     }
   }
 }
 
-export default SearchResultsRepoLst
+export default SearchResultsRepoList

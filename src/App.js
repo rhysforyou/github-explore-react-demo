@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SearchBox from './SearchBox'
-import SearchResultsRepoLst from './SearchResultsRepoLst'
+import SearchResultsRepoList from './SearchResultsRepoList'
 import './App.css'
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
             value={this.state.searchTerm}
             onChange={e => this.handleSearchTermChange(e)}
           />
-          <SearchResultsRepoLst searchTerm={this.state.searchTerm} />
+          <SearchResultsRepoList searchTerm={this.state.searchTerm} />
         </main>
       </div>
     )
