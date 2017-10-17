@@ -19,10 +19,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">GitHub Explorer</h1>
+        <header className="App__header">
+          <h1 className="App__title">GitHub Explorer</h1>
         </header>
-        <main className="App-content">
+        <main className="App__content">
           <SearchBox
             value={this.state.searchTerm}
             onChange={e => this.handleSearchTermChange(e)}

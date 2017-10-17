@@ -1,4 +1,4 @@
-.App-header {
+.App__header {
   text-align: center;
   width: 100%;
   height: 3.5rem;
@@ -16,7 +16,7 @@
   z-index: 2;
 }
 
-.App-title {
+.App__title {
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -24,7 +24,7 @@
   color: var(--main-accent-fg-color);
 }
 
-.App-content {
+.App__content {
   max-width: 48rem;
   margin: auto;
   padding: 4.5rem 1rem 1rem;
