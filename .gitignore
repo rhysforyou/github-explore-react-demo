@@ -11,6 +11,7 @@
 
 # docs
 doc/
+doc.md
 
 # misc
 .DS_Store
