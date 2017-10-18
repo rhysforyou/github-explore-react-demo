@@ -1,9 +1,9 @@
 import React from 'react'
 import RepoList from '../components/RepoList'
 import Error from '../components/Error'
+import Spinner from '../components/Spinner'
 import debounce from '../util/debounce'
 import defaultResults from './defaultResults.json'
-import './SearchResultsRepoList.css'
 
 const STATE_LOADING = 'loading'
 const STATE_LOADED = 'loaded'
@@ -82,7 +82,7 @@ class SearchResultsRepoList extends React.Component {
     } else if (this.state.loadingState === STATE_ERROR) {
       return <Error message="Error loading repos" />
     } else {
-      return <span className="SearchResultsRepoList__spinner" />
+      return <Spinner />
     }
   }
 }
