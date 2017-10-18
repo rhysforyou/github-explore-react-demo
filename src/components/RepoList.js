@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import Repo from './Repo'
 import './RepoList.css'
 
+/**
+ * Displays a list of repository objects
+ *
+ * @param {Object} props the React component's props
+ * @param {Array} props.repos the repositories to display
+ */
 class RepoList extends Component {
   static defaultProps = {
     repos: []

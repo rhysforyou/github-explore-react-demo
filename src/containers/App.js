@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SearchBox from '../components/SearchBox'
 import SearchResultsRepoList from './SearchResultsRepoList'
 import './App.css'
 
-class App extends Component {
+/**
+ * The top level container component responsible for defining the app's basic
+ * layout and maintaining application-wide state (in this case the search term).
+ */
+class App extends React.Component {
   constructor(props) {
     super(props)
 

@@ -2,6 +2,12 @@ import React from 'react'
 import errorIcon from './errorIcon.svg'
 import './Error.css'
 
+/**
+ * A component for displaying errors
+ *
+ * @param {Object} props the React component's props
+ * @param {string} props.message the error message to display
+ */
 class Error extends React.Component {
   render() {
     return (

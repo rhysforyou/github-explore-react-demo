@@ -1,6 +1,18 @@
 import React, { Component } from 'react'
 import './Repo.css'
 
+/**
+ * A component for displaying the details of a GitHub repo
+ *
+ * @param {Object} props the React component's props
+ * @param {string} props.name the full display name of the repo
+ * @param {string} props.url a URL to the repo's GitHb page
+ * @param {string} props.language the primary programming language in this repo
+ * @param {string} props.description a short description of the repo
+ * @param {Array<string>} props.topics the topics this repo belongs to
+ * @param {string} props.homepage a URL to the project's homepage
+ *
+ */
 class Repo extends Component {
   render() {
     return (

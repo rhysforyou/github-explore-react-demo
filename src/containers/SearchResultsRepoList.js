@@ -9,6 +9,13 @@ const STATE_LOADING = 'loading'
 const STATE_LOADED = 'loaded'
 const STATE_ERROR = 'error'
 
+/**
+ * A container component that renders search results from the GitHub API based
+ * on its `searchTerm` prop.
+ *
+ * @param {Object} props the React component's props
+ * @param {string} props.searchTerm the search term to display results for
+ */
 class SearchResultsRepoList extends React.Component {
   constructor(props) {
     super(props)
